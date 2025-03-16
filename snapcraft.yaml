@@ -1,16 +1,16 @@
-name: [Snap Name] # you probably want to 'snapcraft register <name>'
+name: castle-keeper # you probably want to 'snapcraft register <name>'
 base: core22 # the base snap is the execution environment for this snap
 version: '1.0.0' # just for humans, typically '1.2+git' or '1.3.2'
-title: [Game Name]
-summary: [Short Summary]
-description: [Description]
+title: Castle Guardian Defense
+summary: Defend your castle from enemy invaders.
+description: Deploy your defenses, summon heroes, and repel attacking armies to save your kingdom from ruin.
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 
 apps:
-  [Snap Name]:
-    command: bin/[Snap Name]-bin
+  castle-keeper:
+    command: bin/castle-keeper-bin
     extensions: [gnome]
     plugs:
       - network
@@ -22,8 +22,8 @@ layout:
     bind: $SNAP/gnome-platform/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0
 
 parts:
-  [Snap Name]:
+  castle-keeper:
     plugin: dump
     source: .
     organize:
-      [Snap Name]-bin: bin/
+      castle-keeper-bin: bin/
